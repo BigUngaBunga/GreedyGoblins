@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C177D5-287F-4376-AE7D-CC8EC8612BD1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Greedy_Goblins</RootNamespace>
+    <AssemblyName>Greedy Goblins</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\LevelButton.cs" />
+    <Compile Include="Buttons\TextButton.cs" />
+    <Compile Include="Buttons\UpgradeButton.cs" />
+    <Compile Include="Game Objects\Entities\Allies\Ally.cs" />
+    <Compile Include="Game Objects\Entities\Allies\Goblin.cs" />
+    <Compile Include="Game Objects\Entities\Enemies\Enemy.cs" />
+    <Compile Include="Game Objects\Entities\Enemies\Fighter.cs" />
+    <Compile Include="Game Objects\Entities\Enemies\King.cs" />
+    <Compile Include="Game Objects\Entities\Enemies\Miner.cs" />
+    <Compile Include="Game Objects\Entities\Enemies\Soldier.cs" />
+    <Compile Include="Game Objects\Projectiles\Flames.cs" />
+    <Compile Include="Game Objects\Towers\Cannon.cs" />
+    <Compile Include="Game Objects\Towers\Crossbowman.cs" />
+    <Compile Include="Game Objects\Towers\Flamethrower.cs" />
+    <Compile Include="Game Objects\Towers\Tower.cs" />
+    <Compile Include="Handlers\CatmullRomPath.cs" />
+    <Compile Include="Game Objects\Entities\Entity.cs" />
+    <Compile Include="Game Objects\GameObject.cs" />
+    <Compile Include="Game Objects\MapObject.cs" />
+    <Compile Include="Game Objects\Projectiles\Cannonball.cs" />
+    <Compile Include="Game Objects\Projectiles\Projectile.cs" />
+    <Compile Include="Game Objects\Projectiles\Quarrel.cs" />
+    <Compile Include="Managers\AssetManager.cs" />
+    <Compile Include="Buttons\Button.cs" />
+    <Compile Include="Managers\ButtonManager.cs" />
+    <Compile Include="Buttons\OptionButton.cs" />
+    <Compile Include="Buttons\ResolutionButton.cs" />
+    <Compile Include="Buttons\ToggleButton.cs" />
+    <Compile Include="Buttons\TowerButton.cs" />
+    <Compile Include="Handlers\KeyMouseReader.cs" />
+    <Compile Include="Managers\LevelManagers\EntityManager.cs" />
+    <Compile Include="Managers\LevelManagers\Level.cs" />
+    <Compile Include="Managers\LevelEditor\LevelEditor.cs" />
+    <Compile Include="Managers\LevelManagers\LevelManager.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\Effect\BloodEffect.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\Effect\Effect.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\Effect\Explosion.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\Effect\FlameEffect.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\EffectManager.cs" />
+    <Compile Include="Managers\LevelManagers\ParticleManager\Effect\Particle.cs" />
+    <Compile Include="Managers\LevelManagers\ProjectileManager.cs" />
+    <Compile Include="Handlers\ScoreHandler.cs" />
+    <Compile Include="Other\GameOverMessage.cs" />
+    <Compile Include="Other\Main.cs" />
+    <Compile Include="Managers\LevelEditor\MapPoint.cs" />
+    <Compile Include="Managers\LevelManagers\MapManager.cs" />
+    <Compile Include="Managers\LevelManagers\TowerManager.cs" />
+    <Compile Include="Managers\LevelManagers\WaveLoader\Wave.cs" />
+    <Compile Include="Managers\LevelManagers\WaveLoader\WaveLoader.cs" />
+    <Compile Include="Handlers\Player.cs" />
+    <Compile Include="Other\Program.cs" />
+    <Compile Include="Other\TowerInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Spline">
+      <HintPath>..\..\..\..\Documents\DATA\Programmering\Usefull stuff\Spline.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaveMap\SaveMapForm.csproj">
+      <Project>{2285e121-0afc-4a81-ba05-4fe14e8ea4f4}</Project>
+      <Name>SaveMapForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
